@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Attendees",
+  "info": {
+    "name": "Attendees",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "password": {
+      "type": "password"
+    },
+    "membership": {
+      "type": "enumeration",
+      "enum": [
+        "platinum",
+        "protege",
+        "guest",
+        "legacy"
+      ]
+    },
+    "tickets": {
+      "via": "attendee",
+      "collection": "tickets"
+    }
+  }
+}

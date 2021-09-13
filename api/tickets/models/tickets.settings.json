@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "Tickets",
+  "info": {
+    "name": "Tickets",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "event": {
+      "via": "tickets",
+      "model": "events"
+    },
+    "attendee": {
+      "model": "attendees",
+      "via": "tickets"
+    },
+    "price": {
+      "type": "decimal"
+    },
+    "expiry": {
+      "type": "date"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Standard",
+        "Premium",
+        "Ultimate",
+        "Platinum"
+      ]
+    }
+  }
+}
